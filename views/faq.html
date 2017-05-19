@@ -1,0 +1,50 @@
+<div id="faq" class="col-sm-6">
+  <h2 id="faqTitle">FAQ</h2>
+  <h4>Do you have a sound system?</h4>
+  <p>Yes, perfect for music and anouncements.</p>
+
+  <h4>Do you have a Big Screen where we can display pictures or videos?</h4>
+  <p>Yes, you can set up your video, slideshow, movie, whatever!!</p>
+
+  <h4>What is the maximum capacity?</h4>
+  <p>We can entertain up to 175 people.</p>
+
+  <h4>Are tables included?</h4>
+  <p>Yes</p>
+
+  <h4>Are your tables square or round?</h4>
+  <p>We have round tables and white chairs.</p>
+
+  <h4>Is there a dance floor?</h4>
+  <p>Of Course! Comes with special lighting.</p>
+
+  <h4>Can we serve alcoholic beverages?</h4>
+  <p>Yes, however, you must have your own <b>licensed*</b> bartender.</p>
+
+  <h4>Where are you located?</h4>
+  <p>We are located at 112 E Sam Rayburn Dr Bonham, TX 75418:</p>
+
+  <div id="location">
+    <img id="mapPic" class="pull-left" src="https://www.google.com/maps/vt/data=RfCSdfNZ0LFPrHSm0ublXdzhdrDFhtmHhN1u-gM,ARGnCJdNVbr8KnjBQ76B9UPBPnIOdk7-z7XaXpuGi2Ycn9z_jRKFa1aEekWMnQorA_aD8KhVBAcXpwPYcMjDf69BheyWJiUtGut6XlKOh-2RQyvBSJ8G1KUpLQ9YOi74gapZy_BndrwIyhDkRwp8ARiSa218BB50YauMdjZg5FnmI_BcVz9CFOuNBjU9TR0MmbjsMA"
+      alt="">
+
+  </div>
+</div>
+
+
+
+<div id="contact" class="col-sm-6">
+  <h2 id="contactTitle">Contact Us</h2>
+  <h4 class="inputTitle">Name:</h4>
+  <input type="text" class="form-control contactInput" ng-model="contactName">
+  <p class="contentReq" ng-show="nameReq">*Field Required</p>
+  <h4 class="inputTitle">Email:</h4>
+  <input type="text" class="form-control contactInput" ng-model="contactEmail">
+  <p class="contentReq" ng-show="emailReq">*Field Required</p>
+  <h4 class="inputTitle">Message:</h4>
+  <textarea id="msg" class="form-control contactInput" ng-model="contactMsg"></textarea>
+  <p class="contentReq" ng-show="msgReq">*Field Required</p>
+  <button class="btn btn-primary pull-right" ng-click="contactSubmit()">Submit</button>
+  <p>We welcome your feedback and suggestions. </p>
+  <p ng-show="msgSent" id="msgSent">Your Message Was Sent!</p>
+</div>

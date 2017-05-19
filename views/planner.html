@@ -1,0 +1,60 @@
+<div id="eventForm">
+  <h2 id="formTitle">Scheduel An Event</h2>
+  <div class="formFirstName col-sm-6 form-group">
+    <h4>First Name:</h4>
+    <input type="text" class="plannerInput form-control" ng-model="firstName">
+  </div>
+  <div class="formLastName col-sm-6 form-group">
+    <h4>Last Name:</h4>
+    <input type="text" class="plannerInput form-control" ng-model="lastName">
+  </div>
+  <div class="formType col-sm-4 form-group">
+    <h4>Event Type:</h4>
+    <input type="text" class="plannerInput form-control" ng-model="type">
+    <!--<select id="eventTypeList" class="selectpicker">
+      <option value="Corporate">Corporate</option>
+      <option value="Wedding">Wedding</option>
+      <option value="Baby Shower">Baby Shower</option>
+      <option value="Party">Party</option>
+      <option value="Other">Other</option>
+    </select>-->
+  </div>
+  <div class="formDate col-sm-4 form-group">
+    <h4>Date:</h4>
+    <input type="date" class="plannerInput form-control" ng-model="eventDate">
+  </div>
+  <div class="formTime col-sm-4 form-group">
+    <h4>Time:</h4>
+    <input type="text" class="plannerInput form-control" ng-model="time">
+  </div>
+  <button ng-click="addEvent()" id="planSubmit" class="btn btn-primary pull-right" ng-show="addButton">Submit</button>
+  <button ng-click="saveEvent()" id="planUpdate" class="btn btn-success pull-right" ng-show="saveButton">Save</button>
+</div>
+
+<div id="eventsIndex">
+  <div id="eventsTitle">
+    <h2>Our Events</h2>
+    <!--<button id="searchEvent" class="btn btn-primary pull-right" ng-click="searchBtn">Search</button>-->
+  </div>
+  <br>
+  <div class="form-group">
+    <h2>Search Our Events</h2>
+    <input type="text" class="form-control" placeholder="Search..." ng-model="eventSearch">
+  </div>
+
+
+  <div class="eventsContainer col-md-3" ng-repeat="event in events | filter: eventSearch">
+
+    <div class="eventHeader">
+      <h2 class="eventHeading">{{ event.firstName }}<br>{{ event.lastName }}</h2>
+    </div>
+    <div class="eventBody">
+      <p><strong>Type:</strong> {{ event.type }}</p>
+      <p><strong>Date:</strong> {{ event.date | date: "MM/dd/yyyy"}}</p>
+      <p><strong>Time:</strong> {{ event.time }}</p>
+      <button class="btn btn-info" ng-click="updateEvent(event)">Update</button>
+      <button class="btn btn-danger" ng-click="deleteEvent(event)">Delete</button>
+    </div>
+
+  </div>
+</div>
